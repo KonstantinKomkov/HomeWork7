@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include <locale.h>
 
-int odd_num (int value) // Вывод введеных нечетных чисел в прямом порядке
+unsigned int value = 0; // Глобальная переменная, целое число введенное пользователем между пробелами
+
+int odd_num (void) // Вывод введеных нечетных чисел в прямом порядке
 {
 	char c;
 	if ((c = getchar()) != '0') // Если введенный символ не равен 0
@@ -18,8 +20,7 @@ int odd_num (int value) // Вывод введеных нечетных чисе
 			}
 			value = 0;
 		}
-		//printf("a");
-		odd_num(value);
+		odd_num();
 	}
 	else 
 	{
@@ -32,6 +33,6 @@ int main (void)
 	setlocale(LC_ALL, "ru_RU.UTF-8");
 	puts("Введите последовательность ненулевых целых чисел через пробел. В конце число 0.");
 	printf("Данные на входе: ");
-	odd_num(12);
+	odd_num();
 	return 0;
 }
