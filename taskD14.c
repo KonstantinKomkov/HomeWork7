@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <locale.h>
 
-unsigned int value = 0; // Глобальная переменная, целое число введенное пользователем между пробелами
 
 int odd_num (void) // Вывод введеных нечетных чисел в прямом порядке
 {
+	static int value = 0;
 	char c;
 	if ((c = getchar()) != '0') // Если введенный символ не равен 0
 	{
